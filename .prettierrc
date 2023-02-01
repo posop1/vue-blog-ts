@@ -1,0 +1,26 @@
+{
+  "tabWidth": 2,
+  "printWidth": 100,
+  "semi": false,
+  "useTabs": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "singleAttributePerLine": true,
+  "arrowParens": "always",
+  "trailingComma": "none",
+  "quoteProps": "as-needed",
+  "endOfLine": "lf",
+  "importOrder": [
+    "^react",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_TYPES>",
+    "^[~]",
+    "^[~/]",
+    "^[@/]",
+    "^[./]"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true,
+  "multilineArraysWrapThreshold": 2
+}
