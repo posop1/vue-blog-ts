@@ -1,12 +1,16 @@
 <template>
   <div class="post">
+    <div class="post__info">
+      <span>{{ post.username }}</span>
+      <span>{{ post.createdAt }}</span>
+    </div>
     <div class="main__info">
       <h3>{{ post.title }}</h3>
       <p>{{ post.text }}</p>
     </div>
     <div class="sub__info">
       <div>
-        <span>{{ post.createdAt.slice(0, 10).split('-').join(' ') }}</span>
+        <span><CommentsIcon />{{ post.comments.length }}</span>
         <span><EyeIcon />{{ post.views }}</span>
       </div>
       <RouterLink
@@ -19,8 +23,10 @@
 </template>
 
 <script setup lang="ts">
+import moment from 'moment'
 import { IPost } from '@/types/post'
 import EyeIcon from '@/components/icons/EyeIcon.vue'
+import CommentsIcon from '@/components/icons/CommentsIcon.vue'
 defineProps<{
   post: IPost
 }>()
@@ -39,6 +45,14 @@ defineProps<{
 .main__info {
   h3 {
     margin-bottom: 15px;
+  }
+}
+.post__info {
+  display: flex;
+  gap: 30px;
+
+  span {
+    opacity: 0.6;
   }
 }
 .sub__info {
@@ -60,12 +74,10 @@ defineProps<{
     gap: 30px;
     span {
       opacity: 0.6;
-
-      &:last-child {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
     }
   }
 }
