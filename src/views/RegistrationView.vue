@@ -1,15 +1,15 @@
 <template>
-  <div class="login__view">
-    <LoginForm />
+  <div class="registration__view">
+    <RegistrationForm />
   </div>
 </template>
 
 <script setup lang="ts">
-import LoginForm from '@/components/Forms/LoginForm.vue'
+import RegistrationForm from '@/components/Forms/RegistrationForm.vue'
 </script>
 
 <style lang="scss" scoped>
-.login__view {
+.registration__view {
   min-height: 90vh;
   width: 100%;
   display: flex;

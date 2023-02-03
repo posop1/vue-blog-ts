@@ -19,6 +19,7 @@ import { aboutText } from '@/utils/constants'
   display: flex;
   min-height: 90vh;
   align-items: center;
+  padding: 20px;
 }
 .inner {
   display: flex;

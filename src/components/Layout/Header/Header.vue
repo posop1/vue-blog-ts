@@ -18,10 +18,16 @@
         </div>
         <div class="sub__links">
           <RouterLink
+            to="/registration"
+            class="link"
+            active-class="link__active"
+            >Sing up</RouterLink
+          >
+          <RouterLink
             to="/login"
             class="link"
             active-class="link__active"
-            >Login</RouterLink
+            >Sing in</RouterLink
           >
         </div>
       </div>
@@ -69,5 +75,9 @@ import { navLinks } from '@/utils/constants'
 }
 .link__active {
   opacity: 1;
+}
+.sub__links {
+  display: flex;
+  gap: 20px;
 }
 </style>
