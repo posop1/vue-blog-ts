@@ -19,7 +19,7 @@
         class="check__pass"
         @click="visiblePasswordHandler"
       >
-        C
+        <EyeIcon class="icon" />
       </button>
     </div>
     <div class="create__acc">
@@ -35,6 +35,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import EyeIcon from '../icons/EyeIcon.vue'
 
 const isVisiblePassword = ref(false)
 
@@ -73,7 +74,7 @@ const visiblePasswordHandler = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px 15px;
+    padding: 3px 15px;
     input {
       background: none;
       border: none;
@@ -118,6 +119,9 @@ const visiblePasswordHandler = () => {
     border: none;
     outline: none;
     cursor: pointer;
+  }
+  .icon {
+    padding-top: 3px;
   }
 }
 </style>

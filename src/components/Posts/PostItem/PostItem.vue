@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post__info">
       <span>{{ post.username }}</span>
-      <span>{{ post.createdAt }}</span>
+      <span>{{ formatDate(post.createdAt) }}</span>
     </div>
     <div class="main__info">
       <h3>{{ post.title }}</h3>
@@ -14,7 +14,7 @@
         <span><EyeIcon />{{ post.views }}</span>
       </div>
       <RouterLink
-        :to="post._id"
+        :to="'/post/' + post._id"
         class="link"
         >Learn More</RouterLink
       >
@@ -23,10 +23,10 @@
 </template>
 
 <script setup lang="ts">
-import moment from 'moment'
 import { IPost } from '@/types/post'
 import EyeIcon from '@/components/icons/EyeIcon.vue'
 import CommentsIcon from '@/components/icons/CommentsIcon.vue'
+import { formatDate } from '@/utils/formatDate'
 defineProps<{
   post: IPost
 }>()

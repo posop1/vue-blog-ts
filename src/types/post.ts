@@ -11,3 +11,8 @@ export interface IPost {
   updatedAt: string
   __v: number
 }
+
+export interface IComment {
+  postId: string
+  comment: string
+}

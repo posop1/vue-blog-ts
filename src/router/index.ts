@@ -1,11 +1,18 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import SinglePostView from '@/views/SinglePostView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/post/:id',
+    name: 'post',
+    component: SinglePostView
   },
   {
     path: '/about',
@@ -21,6 +28,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/registration',
     name: 'registration',
     component: () => import('@/views/RegistrationView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFoundView
   }
 ]
 

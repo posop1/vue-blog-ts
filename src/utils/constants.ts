@@ -35,6 +35,8 @@ Curabitur at consequat elit. Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 export const navLinks: ILinks[] = [
   { to: '/', name: 'Home' },
+  { to: '/myPosts', name: 'My Posts' },
+  { to: '/createPost', name: 'Create Post' },
   { to: '/about', name: 'About' }
 ]
 

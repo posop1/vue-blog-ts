@@ -19,10 +19,10 @@
         class="check__pass"
         @click="visiblePasswordHandler"
       >
-        C
+        <EyeIcon class="icon" />
       </button>
     </div>
-    <div class="pass__wrap">
+    <div class="pass__wrap repeat">
       <input
         type="password"
         class="pass__inp"
@@ -42,6 +42,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import EyeIcon from '../icons/EyeIcon.vue'
 
 const isVisiblePassword = ref(false)
 
@@ -72,6 +73,7 @@ const visiblePasswordHandler = () => {
     border-radius: 5px;
     padding: 7px 15px;
   }
+
   .pass__wrap {
     background: white;
     min-width: 350px;
@@ -80,7 +82,7 @@ const visiblePasswordHandler = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px 15px;
+    padding: 3px 15px;
     input {
       background: none;
       border: none;
@@ -88,6 +90,9 @@ const visiblePasswordHandler = () => {
       font-size: 14px;
       width: 100%;
     }
+  }
+  .repeat {
+    padding: 7px 15px;
   }
   .btn {
     background: white;
@@ -124,6 +129,9 @@ const visiblePasswordHandler = () => {
     border: none;
     outline: none;
     cursor: pointer;
+  }
+  .icon {
+    padding-top: 3px;
   }
 }
 </style>

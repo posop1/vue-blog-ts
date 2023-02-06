@@ -26,5 +26,6 @@ import Header from './Header/Header.vue'
 .main {
   width: 100%;
   min-height: 91vh;
+  padding: 0px 15px;
 }
 </style>

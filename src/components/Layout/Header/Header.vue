@@ -46,7 +46,7 @@ import { navLinks } from '@/utils/constants'
   position: sticky;
   left: 0;
   top: 0;
-  padding: 10px 5px;
+  padding: 5px 15px;
   background: rgb(19, 19, 19);
   color: white;
 }
