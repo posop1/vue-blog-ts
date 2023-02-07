@@ -1,7 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import SinglePostView from '@/views/SinglePostView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -31,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: NotFoundView
+    component: () => import('@/views/NotFoundView.vue')
   }
 ]
 
