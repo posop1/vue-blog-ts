@@ -36,61 +36,6 @@ Curabitur at consequat elit. Lorem ipsum dolor sit amet, consectetur adipiscing 
 export const navLinks: ILinks[] = [
   { to: '/', name: 'Home' },
   { to: '/myPosts', name: 'My Posts' },
-  { to: '/createPost', name: 'Create Post' },
+  { to: '/create', name: 'Create Post' },
   { to: '/about', name: 'About' }
-]
-
-export const mockPosts: IPost[] = [
-  {
-    _id: '6383261d9789c5f8b4ea183b',
-    username: 'asd',
-    title: 'A Comprehensive Guide To Marketing Attribution Models',
-    text: "Learn more about marketing attribution models that help marketers understand which touchpoint in a buyer's journey is responsible for conversion.",
-    imgUrl: '',
-    views: 83,
-    author: '63821a08a540f82f43b48adb',
-    comments: ['638337d49789c5f8b4ea1918', '638338159789c5f8b4ea191e'],
-    createdAt: '2022-11-27T08:55:57.591Z',
-    updatedAt: '2022-12-13T13:28:32.541Z',
-    __v: 0
-  },
-  {
-    _id: '6383261d9789c5f8b4ea183a',
-    username: 'asd',
-    title: 'A Comprehensive Guide To Marketing Attribution Models',
-    text: "Learn more about marketing attribution models that help marketers understand which touchpoint in a buyer's journey is responsible for conversion.",
-    imgUrl: '',
-    views: 83,
-    author: '63821a08a540f82f43b48adb',
-    comments: ['638337d49789c5f8b4ea1918', '638338159789c5f8b4ea191e'],
-    createdAt: '2022-11-27T08:55:57.591Z',
-    updatedAt: '2022-12-13T13:28:32.541Z',
-    __v: 0
-  },
-  {
-    _id: '6383261d9789c5f8b4ea183t',
-    username: 'asd',
-    title: 'A Comprehensive Guide To Marketing Attribution Models',
-    text: "Learn more about marketing attribution models that help marketers understand which touchpoint in a buyer's journey is responsible for conversion.",
-    imgUrl: '',
-    views: 83,
-    author: '63821a08a540f82f43b48adb',
-    comments: ['638337d49789c5f8b4ea1918', '638338159789c5f8b4ea191e'],
-    createdAt: '2022-11-27T08:55:57.591Z',
-    updatedAt: '2022-12-13T13:28:32.541Z',
-    __v: 0
-  },
-  {
-    _id: '6383261d9789c5f8b4ea183j',
-    username: 'asd',
-    title: 'A Comprehensive Guide To Marketing Attribution Models',
-    text: "Learn more about marketing attribution models that help marketers understand which touchpoint in a buyer's journey is responsible for conversion.",
-    imgUrl: '',
-    views: 83,
-    author: '63821a08a540f82f43b48adb',
-    comments: ['638337d49789c5f8b4ea1918', '638338159789c5f8b4ea191e'],
-    createdAt: '2022-11-27T08:55:57.591Z',
-    updatedAt: '2022-12-13T13:28:32.541Z',
-    __v: 0
-  }
 ]

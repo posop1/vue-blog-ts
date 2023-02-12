@@ -42,7 +42,7 @@ const emit = defineEmits(['createComment'])
 const myComment = ref('')
 
 const createComment = () => {
-  emit('createComment', myComment)
+  emit('createComment', myComment.value)
 }
 
 defineProps<{ comments?: IComment[]; message?: string }>()

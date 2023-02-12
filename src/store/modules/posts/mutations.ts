@@ -1,12 +1,12 @@
 import { IPost } from '@/types/post'
-import { PostsState } from './types'
+import { PostsState, TStatus } from './types'
 
-export const setPosts = (
-  state: PostsState,
-  payload: { posts: IPost[]; status: 'loading' | 'error' | 'complete' }
-) => {
-  if (typeof payload === 'string') {
-  }
+export const setPosts = (state: PostsState, payload: { posts: IPost[]; status: TStatus }) => {
   state.posts = payload.posts
+  state.status = payload.status
+}
+
+export const createPost = (state: PostsState, payload: { post: IPost; status: TStatus }) => {
+  state.posts.push(payload.post)
   state.status = payload.status
 }

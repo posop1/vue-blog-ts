@@ -13,6 +13,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'post',
     component: SinglePostView
   },
+  { path: '/create', name: 'create', component: () => import('@/views/CreatePostView.vue') },
   {
     path: '/about',
     name: 'about',

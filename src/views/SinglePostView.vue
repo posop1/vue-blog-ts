@@ -30,8 +30,11 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Loader from '@/components/Loader.vue'
 import Error from '@/components/Error.vue'
+import { key } from '@/store/store'
+import { useStore } from 'vuex'
 
 const router = useRoute()
+const store = useStore(key)
 
 const post = ref<IPost>()
 const comments = ref<IComment[]>()
@@ -62,10 +65,13 @@ const createComment = async (myComment: string) => {
   try {
     const { data } = await api.post(`/comments/${router.params.id}`, {
       postId: router.params.id,
-      myComment
+      comment: myComment
     })
-
-    message.value = data.message
+    if (store.getters.checkAuth) {
+      comments.value?.push(data)
+    } else {
+      message.value = 'Where ur rights'
+    }
   } catch (error) {
     console.log(error)
   }

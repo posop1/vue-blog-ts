@@ -7,7 +7,10 @@
           class="logo"
           >Blog</RouterLink
         >
-        <div class="links">
+        <div
+          class="links"
+          v-if="store.getters.checkAuth"
+        >
           <RouterLink
             v-for="link in navLinks"
             :to="link.to"
@@ -16,7 +19,21 @@
             >{{ link.name }}</RouterLink
           >
         </div>
-        <div class="sub__links">
+        <div
+          class="sub__links"
+          v-if="store.getters.checkAuth"
+        >
+          <button
+            class="link btn"
+            @click="logout"
+          >
+            Logout
+          </button>
+        </div>
+        <div
+          class="sub__links"
+          v-else
+        >
           <RouterLink
             to="/registration"
             class="link"
@@ -36,10 +53,24 @@
 </template>
 
 <script setup lang="ts">
+import { key } from '@/store/store'
 import { navLinks } from '@/utils/constants'
+import { useStore } from 'vuex'
+
+const store = useStore(key)
+
+const logout = () => {
+  store.dispatch('logout')
+}
 </script>
 
 <style lang="scss" scoped>
+.btn {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 .header {
   width: 100%;
   z-index: 100;

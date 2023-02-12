@@ -8,12 +8,14 @@
       type="text"
       class="login__inp"
       placeholder="Login"
+      v-model="username"
     />
     <div class="pass__wrap">
       <input
         :type="isVisiblePassword ? 'text' : 'password'"
         class="pass__inp"
         placeholder="Password"
+        v-model="password"
       />
       <button
         class="check__pass"
@@ -29,19 +31,45 @@
         >Create account</RouterLink
       >
     </div>
-    <button class="btn">Done</button>
+    <button
+      class="btn"
+      @click="handleLogin"
+    >
+      Done
+    </button>
   </form>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import EyeIcon from '../icons/EyeIcon.vue'
+import { useStore } from 'vuex'
+import { key } from '@/store/store'
+import { useRouter } from 'vue-router'
+
+const store = useStore(key)
+const router = useRouter()
+
+const username = ref('')
+const password = ref('')
 
 const isVisiblePassword = ref(false)
+
+const handleLogin = () => {
+  store.dispatch('loginUser', { username: username.value, password: password.value })
+  username.value = ''
+  password.value = ''
+}
 
 const visiblePasswordHandler = () => {
   isVisiblePassword.value = !isVisiblePassword.value
 }
+watch(
+  () => store.getters.checkAuth,
+  () => {
+    router.push('/')
+  }
+)
 </script>
 
 <style lang="scss" scoped>

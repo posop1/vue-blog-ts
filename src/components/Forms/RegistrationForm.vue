@@ -1,6 +1,6 @@
 <template>
   <form
-    @submit.prevent
+    @submit.prevent="handleRegistration"
     class="form"
   >
     <h3 class="form__logo">Registration</h3>
@@ -8,12 +8,14 @@
       type="text"
       class="login__inp"
       placeholder="Login"
+      v-model="username"
     />
     <div class="pass__wrap">
       <input
         :type="isVisiblePassword ? 'text' : 'password'"
         class="pass__inp"
         placeholder="Password"
+        v-model="password"
       />
       <button
         class="check__pass"
@@ -22,13 +24,13 @@
         <EyeIcon class="icon" />
       </button>
     </div>
-    <div class="pass__wrap repeat">
+    <!-- <div class="pass__wrap repeat">
       <input
         type="password"
         class="pass__inp"
         placeholder="Repeat password"
       />
-    </div>
+    </div> -->
     <div class="create__acc">
       <RouterLink
         to="/login"
@@ -41,14 +43,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import EyeIcon from '../icons/EyeIcon.vue'
+import { useStore } from 'vuex'
+import { key } from '@/store/store'
+import router from '@/router'
+
+const store = useStore(key)
 
 const isVisiblePassword = ref(false)
+
+const username = ref('')
+const password = ref('')
+
+const handleRegistration = () => {
+  store.dispatch('registerUser', { username: username.value, password: password.value })
+  username.value = ''
+  password.value = ''
+}
 
 const visiblePasswordHandler = () => {
   isVisiblePassword.value = !isVisiblePassword.value
 }
+
+watch(
+  () => store.getters.checkAuth,
+  (newVal) => {
+    router.push('/')
+  }
+)
 </script>
 
 <style lang="scss" scoped>

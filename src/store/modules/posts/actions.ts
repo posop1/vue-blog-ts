@@ -11,3 +11,17 @@ export const fetchPosts = async ({ commit }: ActionsParams) => {
     commit('setPosts', { posts: {}, status: 'error' })
   }
 }
+
+export const createPost = async (
+  { commit }: ActionsParams,
+  params: { title: string; text: string }
+) => {
+  try {
+    const { data } = await api.post('/posts', params)
+
+    commit('createPost', { post: data, status: 'completed' })
+  } catch (error) {
+    console.log(error)
+    commit('createPost', { post: {}, status: 'error' })
+  }
+}

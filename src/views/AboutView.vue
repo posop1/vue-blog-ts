@@ -8,7 +8,20 @@
 </template>
 
 <script setup lang="ts">
+import { key } from '@/store/store'
 import { aboutText } from '@/utils/constants'
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+
+const store = useStore(key)
+const router = useRouter()
+
+onMounted(() => {
+  if (store.getters.checkAuth === false) {
+    router.push('/')
+  }
+})
 </script>
 
 <style lang="scss" scoped>
