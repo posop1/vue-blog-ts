@@ -25,3 +25,11 @@ export const createPost = async (
     commit('createPost', { post: {}, status: 'error' })
   }
 }
+
+export const removePost = async ({ commit }: ActionsParams, id: string) => {
+  try {
+    const { data } = await api.delete(`/posts/${id}`)
+
+    commit('removePost', { post: data })
+  } catch (error) {}
+}

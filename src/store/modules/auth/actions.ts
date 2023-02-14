@@ -10,7 +10,6 @@ export const registerUser = async (
       username,
       password
     })
-    console.log('registerUser:', data)
 
     commit('setUser', { user: data.newUser, token: data.token, status: data.message })
     if (data.token) {
@@ -28,7 +27,6 @@ export const loginUser = async ({ commit }: ActionsParams, { username, password 
       username,
       password
     })
-    console.log('loginUser:', data)
 
     commit('setUser', { user: data.user, token: data.token, status: data.message })
     if (data.token) {
@@ -42,7 +40,6 @@ export const loginUser = async ({ commit }: ActionsParams, { username, password 
 
 export const getMe = async ({ commit }: ActionsParams) => {
   const { data } = await api.get('/auth/me')
-  console.log('getMe:', data)
 
   commit('setUser', { user: data.user, token: data.token, status: data.message })
 }

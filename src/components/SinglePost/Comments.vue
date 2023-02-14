@@ -77,6 +77,7 @@ defineProps<{ comments?: IComment[]; message?: string }>()
     color: white;
     border-radius: 5px;
     transition: 0.2s ease-in-out;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.6;

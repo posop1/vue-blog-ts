@@ -4,4 +4,5 @@ export interface IUser {
   username: string
   password: string
   posts: IPost[]
+  _id: string
 }

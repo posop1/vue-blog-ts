@@ -1,6 +1,5 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import SinglePostView from '@/views/SinglePostView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,9 +10,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/post/:id',
     name: 'post',
-    component: SinglePostView
+    component: () => import('@/views/SinglePostView.vue')
   },
   { path: '/create', name: 'create', component: () => import('@/views/CreatePostView.vue') },
+  { path: '/myPosts', name: 'my posts', component: () => import('@/views/MyPostView.vue') },
   {
     path: '/about',
     name: 'about',
