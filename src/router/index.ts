@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'post',
     component: () => import('@/views/Posts/SinglePostView.vue')
   },
+  {
+    path: '/post/:id/edit',
+    name: 'edit',
+    component: () => import('@/views/Posts/EditPostView.vue')
+  },
   { path: '/create', name: 'create', component: () => import('@/views/Posts/CreatePostView.vue') },
   { path: '/myPosts', name: 'my posts', component: () => import('@/views/Posts/MyPostView.vue') },
   {

@@ -14,3 +14,8 @@ export const createPost = (state: PostsState, payload: { post: IPost; status: TS
 export const removePost = (state: PostsState, payload: { post: IPost }) => {
   state.posts = state.posts.filter((post) => post._id !== payload.post._id)
 }
+
+export const updatePost = (state: PostsState, payload: { post: IPost }) => {
+  const index = state.posts.findIndex((post) => post._id === payload.post._id)
+  state.posts[index] = payload.post
+}

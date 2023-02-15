@@ -9,7 +9,11 @@
       <div class="main__info">
         <PostInfo :post="post" />
         <div v-if="user?._id === post?.author">
-          <button class="user__btn">Edit</button>
+          <RouterLink
+            :to="`${post._id}/edit`"
+            class="user__btn"
+            >Edit</RouterLink
+          >
           <button
             class="user__btn"
             @click="removePostHandler"
@@ -31,8 +35,6 @@
 </template>
 
 <script setup lang="ts">
-//TODO сделать редактирование поста
-
 import api from '@/api/instance'
 import PostInfo from '@/components/SinglePost/PostInfo.vue'
 import Comments from '@/components/SinglePost/Comments.vue'

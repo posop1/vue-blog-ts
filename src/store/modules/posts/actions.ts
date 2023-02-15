@@ -31,5 +31,20 @@ export const removePost = async ({ commit }: ActionsParams, id: string) => {
     const { data } = await api.delete(`/posts/${id}`)
 
     commit('removePost', { post: data })
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const updatePost = async (
+  { commit }: ActionsParams,
+  params: { id: string; title: string; text: string }
+) => {
+  try {
+    const { data } = await api.put(`/posts/${params.id}`, params)
+
+    commit('updatePost', { post: data })
+  } catch (error) {
+    console.log(error)
+  }
 }
