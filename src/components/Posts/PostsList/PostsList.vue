@@ -1,5 +1,11 @@
 <template>
-  <div class="list">
+  <div v-if="posts.length === 0">
+    <h3>Posts not found</h3>
+  </div>
+  <div
+    class="list"
+    v-else
+  >
     <PostItem
       v-for="post in posts"
       :post="post"

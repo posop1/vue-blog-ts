@@ -10,10 +10,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/post/:id',
     name: 'post',
-    component: () => import('@/views/SinglePostView.vue')
+    component: () => import('@/views/Posts/SinglePostView.vue')
   },
-  { path: '/create', name: 'create', component: () => import('@/views/CreatePostView.vue') },
-  { path: '/myPosts', name: 'my posts', component: () => import('@/views/MyPostView.vue') },
+  { path: '/create', name: 'create', component: () => import('@/views/Posts/CreatePostView.vue') },
+  { path: '/myPosts', name: 'my posts', component: () => import('@/views/Posts/MyPostView.vue') },
   {
     path: '/about',
     name: 'about',
@@ -22,12 +22,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/LoginView.vue')
+    component: () => import('@/views/Auth/LoginView.vue')
   },
   {
     path: '/registration',
     name: 'registration',
-    component: () => import('@/views/RegistrationView.vue')
+    component: () => import('@/views/Auth/RegistrationView.vue')
   },
   {
     path: '/:pathMatch(.*)*',
